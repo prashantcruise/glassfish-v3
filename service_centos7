@@ -1,0 +1,15 @@
+[Unit]
+#by prashant kumar
+#for centos 7
+Description = GlassFish Server 3.1.2
+After = syslog.target network.target
+
+[Service]
+User=root
+ExecStart = /usr/bin/java -jar /opt/glassfish3/glassfish/modules/java -jar admin-cli.jar start-domain
+ExecStop = /usr/bin/java -jar /opt/glassfish3/glassfish/modules/java -jar admin-cli.jar stop-domain
+ExecReload = /usr/bin/java -jar /opt/glassfish3/glassfish/modules/java -jar admin-cli.jar restart-domain
+Type = forking
+
+[Install]
+WantedBy = multi-user.target
