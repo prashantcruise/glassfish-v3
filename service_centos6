@@ -1,0 +1,25 @@
+#!/bin/bash  
+# description: Glassfish 3.1.2
+#input your java path
+JAVA_HOME=/usr/java/  
+export JAVA_HOME  
+PATH=$JAVA_HOME/bin:$PATH  
+export PATH  
+#input your glassfish install path
+
+GLASSFISH_HOME=/opt/glassfish3/glassfish  
+ 
+case $1 in  
+start)  
+sh $GLASSFISH_HOME/bin/asadmin start-domain domain1  
+;;  
+stop)  
+sh $GLASSFISH_HOME/bin/asadmin stop-domain domain1  
+;;  
+restart)  
+sh $GLASSFISH_HOME/bin/asadmin stop-domain domain1  
+sh $GLASSFISH_HOME/bin/asadmin start-domain domain1  
+;;  
+esac  
+exit 0  
+
