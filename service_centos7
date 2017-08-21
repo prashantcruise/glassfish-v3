@@ -6,9 +6,9 @@ After = syslog.target network.target
 
 [Service]
 User=root
-ExecStart = /usr/bin/java -jar /opt/glassfish3/glassfish/modules/java -jar admin-cli.jar start-domain
-ExecStop = /usr/bin/java -jar /opt/glassfish3/glassfish/modules/java -jar admin-cli.jar stop-domain
-ExecReload = /usr/bin/java -jar /opt/glassfish3/glassfish/modules/java -jar admin-cli.jar restart-domain
+ExecStart = /usr/bin/java -jar /opt/glassfish3/glassfish/modules/admin-cli.jar start-domain
+ExecStop = /usr/bin/java -jar /opt/glassfish3/glassfish/modules/admin-cli.jar stop-domain
+ExecReload = /usr/bin/java -jar /opt/glassfish3/glassfish/modules/admin-cli.jar restart-domain
 Type = forking
 
 [Install]
